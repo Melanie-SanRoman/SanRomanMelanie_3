@@ -5,6 +5,9 @@
     --green: rgb(122, 194, 35);
     --primary_font: 'Montserrat', sans-serif;
     --second_font: 'Fira Sans', sans-serif;
+    --font_ExtraLight: 200;
+    --font_Light: 300;
+    --font_Regular: 400;
 }
 
 /* CENTRA BODY */
@@ -21,15 +24,13 @@ header {
     display: flex;
     flex-direction: column;
     max-width: 50%;
-    /* background-color: aqua; */
     align-items: flex-start;
     margin: 0 auto;
     max-width: 50%;
 
-
     h1 {
         font-family: var(--primary_font);
-        font-weight: 400;
+        font-weight: var(--font_Regular);
         font-size: 2.5rem;
         color: var(--primary_color);
         margin: 0px;
@@ -37,23 +38,20 @@ header {
 
     h4 {
         font-family: var(--second_font);
-        font-weight: 200;
+        font-weight: var(--font_Light);
         font-size: 1rem;
     }
 }
 
 /* MAIN */
 main {
-    /* CENTRAR Y TAM * revisar*/
-    /* background-color: #97d848; */
+    /* CENTRAR Y TAM */
     padding: 16px;
     margin: 0 auto;
     max-width: 50%;
 
     /* FORMULARIO */
     form {
-        font-family: var(--second_font);
-
         display: flex;
         flex-direction: column;
         background-color: white;
@@ -62,25 +60,25 @@ main {
         border: 2px solid var(--primary_color);
         border-radius: 8px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        /* position: relative; */
 
         /* POSICION Y FONT = LABELS */
         label {
             margin: 20px 0px 4px 8px;
             font-size: var(--size_font_label);
+            font-family: var(--second_font);
+            font-weight: var(--font_Light);
         }
 
         /* POSICION, TAM, COLOR, BORDES = INPUT, SELECT, TEXTAREA */
         input,
         select,
         textarea {
-            margin: 20px 0px 20px 20px;
+            margin: 40px 0px 8px 20px;
             height: 2em;
             border: none;
             border-bottom: 1.5px solid var(--primary_color);
             border-right: 1.5px solid var(--primary_color);
             border-radius: 5px;
-            /* background-color: aquamarine; */
 
             /* FOCUS */
             &:focus {
@@ -89,46 +87,52 @@ main {
             }
         }
 
-        /* TAM INDEPENDIENTE DE CADA INPUT, SELECT, TEXTAREA */
-        #name {
-            width: 60%;
-        }
-
         .input_box {
             position: relative;
             margin-bottom: 10px;
 
+            /* TRANSICION AL HACER FOCO EN UN INPUT */
             input,
             select,
             textarea {
 
+                /* FOCO + INPUT SIN VALOR */
                 &:focus+label,
                 &:not(:placeholder-shown)+label {
-                    transform: translateY(-18px);
+                    transform: translateY(-15px);
                     color: var(--green);
                     background-color: rgb(255, 255, 255);
                 }
 
+                /* INPUT CON VALOR */
                 &:not(:placeholder-shown)+label {
                     transform: translateY(-28px);
                     color: black;
                     background: none;
                     left: 0px;
+                    font-weight: var(--font_Light);
+                    font-style: normal;
                 }
             }
 
             label {
                 position: absolute;
                 left: 20px;
-                top: 5px;
+                top: 25px;
                 background: #fff;
                 padding: 0px 5px;
                 transition: transform 0.6s ease, color 0.4s ease, background-color 0.2s ease;
                 color: rgb(102, 100, 100);
                 background: none;
-            }
 
-            /* background-color: pink; */
+                font-weight: var(--font_ExtraLight);
+                font-style: italic;
+            }
+        }
+        
+        /* TAM INDEPENDIENTE DE CADA INPUT, SELECT, TEXTAREA */
+        #name {
+            width: 60%;
         }
 
         #mail {
@@ -140,7 +144,6 @@ main {
         }
 
         #section_cod_area {
-            /* background-color: pink; */
             width: 40%;
         }
 
@@ -158,9 +161,19 @@ main {
             height: 4em;
         }
 
+        /* DIV DEL SELECT */
+        #div_select {
+            margin-top: 40px;
+
+            label {
+                color: rgb(0, 0, 0);
+                font-weight: var(--font_Light);
+                font-style: normal;
+            }
+        }
+
         /* DIV TEL CONTACTO */
         #div_contacto {
-            /* background-color: #97d848; */
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -170,8 +183,6 @@ main {
             section {
                 display: flex;
                 flex-direction: column;
-
-                margin-top: 30px;
 
                 label {
                     font-size: 0.9rem;
@@ -184,31 +195,25 @@ main {
                         transform: translateY(-10px);
                         color: var(--green);
                         background-color: rgb(255, 255, 255);
-
                     }
 
                     &:not(:placeholder-shown)+label {
-                        /* background-color: pink; */
                         transform: translateY(-25px);
                         color: black;
                         background: none;
-
                         left: 0px;
                     }
                 }
-
-                /* background-color: blue; */
             }
         }
 
+        /* BOTONES */
         #buttons {
-            /* background-color: pink; */
             display: flex;
             justify-content: flex-end;
             align-items: center;
             margin: 10px 15px;
             gap: 1em;
-
 
             button {
                 border: none;
@@ -219,6 +224,7 @@ main {
                 }
             }
 
+            /* BOTON ENVIAR */
             #submit {
                 width: 5.5rem;
                 height: 2.5rem;
@@ -238,6 +244,7 @@ main {
                 }
             }
 
+            /* BOTON RESET */
             #reset {
                 width: 2rem;
                 height: 1.5rem;
@@ -245,6 +252,24 @@ main {
                 color: var(--primary_color);
             }
 
+        }
+
+        /* MENSAJE DE ERROR EN LA VALIDACION DE INPUTS */
+        .mensaje-error {
+            color: red;
+            font-size: 0.75rem;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 2px;
+            margin-left: 20px;
+            font-family: var(--second_font);
+            font-weight: var(--font_Regular);
+        }
+        
+        .error {
+            outline: 1px solid red;
+            border-color: red ;
         }
     }
 }
@@ -272,7 +297,7 @@ main {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     margin: 180px auto;
-    width: 50%;
+    width: 30%;
     overflow-y: auto;
     border-radius: 12px;
     text-align: center;
@@ -298,7 +323,7 @@ main {
             padding: 8px 8px;
             border-radius: 4px;
             cursor: pointer;
-            width: 50%;
+            width: 30%;
             /* transition: background-color color 0.3s ease; */
         }
 
@@ -357,19 +382,23 @@ main {
     animation: fadeOut 0.4s ease forwards;
 }
 
+/* MEDIA QUERIES PARA MOBILE */
 @media (max-width:600px) {
+    header {
+        max-width: 80%;
+    }
+
     main {
         max-width: 80%;
-        /* background-color: aqua; */
 
         #div_contacto {
             label {
-                font-size: 0.875rem !important;
+                font-size: 0.75rem !important;
             }
         }
     }
 
-    header {
-        max-width: 80%;
+    .info-modal {
+        width: 70%;
     }
 }
