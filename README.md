@@ -73,8 +73,10 @@ Se utiliza flexbox y media queries para adaptar el diseño a pantallas pequeñas
 ## 🖼 Vista previa del diseño 
 
 > 📸 
-> ![Vista previa del formulario](imagenes/vista_previa.png)
-> ![Vista previa del formulario en accion](imagenes/vista_previa2.png)
+> ![Vista previa del formulario](imagenes/formulario_limpio.png)
+> ![Vista previa del formulario](imagenes/formulario_accion.png)
+> ![Vista previa del formulario en accion](imagenes/boton_enviar.png)
+> ![Vista previa del formulario en accion](imagenes/modal.png)
 
 ---
 
