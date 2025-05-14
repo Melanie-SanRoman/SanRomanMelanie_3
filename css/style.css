@@ -12,7 +12,7 @@
 
 /* CENTRA BODY */
 body {
-    background: #e5e9e4;
+    background: #f5f5f5;
     padding: 16px;
     max-width: 900px;
     margin: 0 auto;
@@ -236,10 +236,12 @@ main {
                 justify-content: center;
                 gap: 0.3rem;
                 font-size: 1em;
-
+                transition: transform 0.8s ease;
+                
                 &:hover {
                     background-color: var(--primary_color);
                     color: white;
+                    transform: scale(1.2);
 
                 }
             }
