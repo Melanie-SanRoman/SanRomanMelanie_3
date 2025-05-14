@@ -12,21 +12,29 @@ Este proyecto es un formulario de contacto responsive y estilizado con HTML y CS
 
 ---
 
-## 🎯 Objetivos del Proyecto
-
-- Ofrecer un formulario sobrio, intuitivo y accesible.
-- Implementar etiquetas flotantes animadas.
-- Validar visualmente los campos requeridos.
-- Crear una experiencia responsive adaptable a dispositivos móviles.
-- Utilizar CSS moderno con variables, animaciones y diseño centrado.
-
----
-
 ## 🚀 Tecnologías Utilizadas
 
 - **HTML5**: estructura semántica.
 - **CSS3**: estilos avanzados, animaciones y diseño responsive.
 - **JavaScript**: lógica de validación y control del modal.
+
+---
+
+## 🎨 Estética Tipográfica y Paleta de Colores
+
+### ✒️ Tipografías
+
+Se utilizaron dos fuentes con el fin de transmitir claridad y estilo:
+
+- **Montserrat**: para los títulos. Tiene un estilo moderno y geométrico le da presencia y profesionalismo al formulario.
+- **Fira Sans**: para el cuerpo del formulario, ya que tiene una buena legibilidad en pantalla.
+
+### 🌈 Colores
+
+- **Tonos neutros** (blancos, grises suaves): usados como base para mantener un diseño limpio y profesional.
+- **Color principal (Rojo tenue)**: aplicado en titulo, botones e interacciones, me parecio un color elegante y que sigue la linea profesional.
+
+El objetivo fue que el diseño sea **accesible, moderno y sobrio**.
 
 ---
 
@@ -50,7 +58,7 @@ Cuando un campo no se completa correctamente, cambia el estilo del input y se mu
 
 ---
 
-### ✅ Modal animada
+### ✅ Modal animado
 
 Una ventana modal aparece para confirmar el envío del formulario, utiliza animaciones.
 
@@ -65,11 +73,11 @@ Se utiliza flexbox y media queries para adaptar el diseño a pantallas pequeñas
 ## 🖼 Vista previa del diseño 
 
 > 📸 
-> ![Vista previa del formulario](vista_previa.png)
+> ![Vista previa del formulario](imagenes/vista_previa.png)
+> ![Vista previa del formulario en accion](imagenes/vista_previa2.png)
 
 ---
 
 ## 🤝 Autor
 
-Proyecto realizado por **Melanie San Román** 💻  
-Estudiante de programación y desarrollo de aplicaciones informáticas.
+Trabajo realizado por **Melanie San Román** 💻  
