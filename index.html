@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- IMPORTACION DED FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER con titulo y subtitulo -->
+    <header>
+        <h1>Contacto</h1>
+        <h4>Completa el formulario a continuacion para recibir mas informacion:</h4>
+    </header>
+
+<!-- MAIN con formulario -->
+    <main>
+        <form action="">
+
+        <!-- CAMPO DE NOMBRE -->
+            <div class="input_box">
+                <input type="text" id="name" name="name" placeholder=" " data-ph="Ingrese su nombre">
+                <label for="name"> Nombre</label>
+            </div>
+
+        <!-- CAMPO DE APELLIDO -->
+            <div class="input_box">
+                <input type="text" id="surname" name="surname" placeholder=" " data-ph="Ingrese su apellido">
+                <label for="surname">Apellido</label>
+            </div>
+
+        <!-- CAMPO DE EMAIL -->
+            <div class="input_box">
+                <input type="email" id="mail" name="mail" placeholder=" " data-ph="Ej: mi_correo@gmail.com">
+                <label for="mail">Correo electronico</label>
+            </div>
+
+        <!-- TELEFONO DE CONTACTO -->
+            <label id=label_tel" for="tel">Telefono de contacto</label>
+            <div class="input_box" id="div_contacto">
+
+            <!-- CAMPO DE CODIGO DE AREA -->
+                <section id="section_cod_area" class="input_box">
+                    <input type="tel" id="cod_area" name="cod_area" placeholder=" " data-ph="Ej: 2983">
+                    <label for="cod_area">Cod. de area</label>
+                </section>
+
+            <!-- CAMPO DE NUMERO DE TELEFONO -->
+                <section id="section_tel" class="input_box">
+                    <input type="tel" id="tel" name="tel" placeholder=" " data-ph="Ej: 50 50-50">
+                    <label for="tel">Numero de telefono</label>
+                </section>
+            </div>
+
+        <!-- CAMPO SELECT -->
+            <div>
+                <label for="select">Motivo de la consulta</label>
+                <select name="select" id="select">
+                    <option value="" selected>Seleccione un area</option>
+                    <option value="">Siniestros</option>
+                    <option value="">Automotores</option>
+                    <option value="">Legales</option>
+                </select>
+            </div>
+
+        <!-- CAMPO DEJA TU MENSAJE -->
+            <div class="input_box">
+                <textarea name="msj" id="msj" placeholder=" " data-ph="Dejanos tu mensaje"></textarea>
+                <label for="msj">Mensaje</label>
+            </div>
+
+        <!-- BOTONES -->
+            <section id="buttons">
+
+            <!-- ENVIAR -->
+                <button type="reset" id="reset"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                    </svg></button>
+
+            <!-- RESET -->
+                <button type="button" id="submit">Enviar <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
+                        <path fill-rule="evenodd"
+                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                    </svg></button>
+            </section>
+        </form>
+    </main>
+
+<!-- MODAL confirmar envio de formulario -->
+    <div class="modal">
+        <div class="info-modal">
+            <h2>Haga "click" en enviar para recibir toda la informacion. Gracias</h2>
+
+        <!-- BOTONES enviar y cancelar -->
+            <section>
+                <button id="btn-send">Enviar</button>
+                <button id="btn-cancel">Cancelar</button>
+            </section>
+        </div>
+    </div>
+
+<!-- IMPORTACION DE ARCHIVOS JAVASCRIPT -->
+    <script src="js/comportamiento.js"></script>
+</body>
+
+</html>
