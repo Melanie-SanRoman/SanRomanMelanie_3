@@ -1,0 +1,375 @@
+/* VARIABLES */
+:root {
+    --primary_color: rgb(208, 20, 44);
+    --size_font_label: 1rem;
+    --green: rgb(122, 194, 35);
+    --primary_font: 'Montserrat', sans-serif;
+    --second_font: 'Fira Sans', sans-serif;
+}
+
+/* CENTRA BODY */
+body {
+    background: #e5e9e4;
+    padding: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    /* H1 = CONTACTO */
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    /* background-color: aqua; */
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 50%;
+
+
+    h1 {
+        font-family: var(--primary_font);
+        font-weight: 400;
+        font-size: 2.5rem;
+        color: var(--primary_color);
+        margin: 0px;
+    }
+
+    h4 {
+        font-family: var(--second_font);
+        font-weight: 200;
+        font-size: 1rem;
+    }
+}
+
+/* MAIN */
+main {
+    /* CENTRAR Y TAM * revisar*/
+    /* background-color: #97d848; */
+    padding: 16px;
+    margin: 0 auto;
+    max-width: 50%;
+
+    /* FORMULARIO */
+    form {
+        font-family: var(--second_font);
+
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 1em;
+        padding-top: 1.5em;
+        border: 2px solid var(--primary_color);
+        border-radius: 8px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /* position: relative; */
+
+        /* POSICION Y FONT = LABELS */
+        label {
+            margin: 20px 0px 4px 8px;
+            font-size: var(--size_font_label);
+        }
+
+        /* POSICION, TAM, COLOR, BORDES = INPUT, SELECT, TEXTAREA */
+        input,
+        select,
+        textarea {
+            margin: 20px 0px 20px 20px;
+            height: 2em;
+            border: none;
+            border-bottom: 1.5px solid var(--primary_color);
+            border-right: 1.5px solid var(--primary_color);
+            border-radius: 5px;
+            /* background-color: aquamarine; */
+
+            /* FOCUS */
+            &:focus {
+                outline: 0;
+                border: 1px solid var(--green);
+            }
+        }
+
+        /* TAM INDEPENDIENTE DE CADA INPUT, SELECT, TEXTAREA */
+        #name {
+            width: 60%;
+        }
+
+        .input_box {
+            position: relative;
+            margin-bottom: 10px;
+
+            input,
+            select,
+            textarea {
+
+                &:focus+label,
+                &:not(:placeholder-shown)+label {
+                    transform: translateY(-18px);
+                    color: var(--green);
+                    background-color: rgb(255, 255, 255);
+                }
+
+                &:not(:placeholder-shown)+label {
+                    transform: translateY(-28px);
+                    color: black;
+                    background: none;
+                    left: 0px;
+                }
+            }
+
+            label {
+                position: absolute;
+                left: 20px;
+                top: 5px;
+                background: #fff;
+                padding: 0px 5px;
+                transition: transform 0.6s ease, color 0.4s ease, background-color 0.2s ease;
+                color: rgb(102, 100, 100);
+                background: none;
+            }
+
+            /* background-color: pink; */
+        }
+
+        #mail {
+            width: 70%;
+        }
+
+        #tel {
+            width: 80%;
+        }
+
+        #section_cod_area {
+            /* background-color: pink; */
+            width: 40%;
+        }
+
+        #section_tel {
+            width: 60%;
+        }
+
+        #select {
+            width: 70%;
+        }
+
+        #msj {
+            width: 80%;
+            max-width: 80%;
+            height: 4em;
+        }
+
+        /* DIV TEL CONTACTO */
+        #div_contacto {
+            /* background-color: #97d848; */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5em;
+            height: 4rem;
+
+            section {
+                display: flex;
+                flex-direction: column;
+
+                margin-top: 30px;
+
+                label {
+                    font-size: 0.9rem;
+                }
+
+                input {
+
+                    &:focus+label,
+                    &:not(:placeholder-shown)+label {
+                        transform: translateY(-10px);
+                        color: var(--green);
+                        background-color: rgb(255, 255, 255);
+
+                    }
+
+                    &:not(:placeholder-shown)+label {
+                        /* background-color: pink; */
+                        transform: translateY(-25px);
+                        color: black;
+                        background: none;
+
+                        left: 0px;
+                    }
+                }
+
+                /* background-color: blue; */
+            }
+        }
+
+        #buttons {
+            /* background-color: pink; */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 10px 15px;
+            gap: 1em;
+
+
+            button {
+                border: none;
+                border-radius: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            #submit {
+                width: 5.5rem;
+                height: 2.5rem;
+                background-color: white;
+                color: var(--primary_color);
+                border: 1px solid var(--primary_color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.3rem;
+                font-size: 1em;
+
+                &:hover {
+                    background-color: var(--primary_color);
+                    color: white;
+
+                }
+            }
+
+            #reset {
+                width: 2rem;
+                height: 1.5rem;
+                background-color: white;
+                color: var(--primary_color);
+            }
+
+        }
+    }
+}
+
+/* MODAL */
+
+/* DA ESTILO AL DIV MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    /* se ubica arriba del contenido */
+    top: 0;
+    left: 0;
+    /* ocupa todo el ancho y alto de la pantalla */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* fondo negro transparente*/
+    z-index: 1;
+    /* Define la profundidad del elemento en la pantalla, o sea, si va adelante o detrás de otros elementos. */
+}
+
+/* DA ESTILO AL CONTENIDO DEL MODAL */
+.info-modal {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 180px auto;
+    width: 50%;
+    overflow-y: auto;
+    border-radius: 12px;
+    text-align: center;
+    align-items: center;
+    animation: fadeIn 0.8s ease;
+    animation: fadeOut 0.8s ease;
+
+    h2 {
+        font-family: var(--primary_font);
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-top: 0;
+        /* color: var(--primary_color); */
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: center;
+
+        button {
+            padding: 8px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 50%;
+            /* transition: background-color color 0.3s ease; */
+        }
+
+        #btn-send {
+            font-size: 15px;
+            background-color: var(--primary_color);
+            color: #ffffff;
+            border: 1px solid var(--primary_color);
+            padding: 0.8rem;
+
+            &:hover {
+                background-color: #ffffff;
+                color: var(--primary_color);
+            }
+        }
+
+        #btn-cancel {
+            font-size: 12px;
+            border: none;
+            background: none;
+            color: var(--primary_color);
+        }
+    }
+}
+
+/* ANIMACION DEL MODAL, cuando se abre y se cierra*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.info-modal.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.info-modal.fade-out {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@media (max-width:600px) {
+    main {
+        max-width: 80%;
+        /* background-color: aqua; */
+
+        #div_contacto {
+            label {
+                font-size: 0.875rem !important;
+            }
+        }
+    }
+
+    header {
+        max-width: 80%;
+    }
+}
