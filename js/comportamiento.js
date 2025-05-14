@@ -43,3 +43,68 @@ function openModal() {
 //         input.placeholder = '';
 //     });
 // });
+
+// VALIDAR INPUTS EN TIEMPO REAL
+
+document.addEventListener('DOMContentLoaded', function () {
+    // DEFINE INPUTS QUE SE VAN A VALIDAR
+    const campos = {
+        name: {
+            input: document.getElementById('name'),
+            validar: valor => valor.trim() !== '',
+            mensaje: 'El nombre es obligatorio.'
+        },
+        surname: {
+            input: document.getElementById('surname'),
+            validar: valor => valor.trim() !== '',
+            mensaje: 'El apellido es obligatorio.'
+        },
+        mail: {
+            input: document.getElementById('mail'),
+            validar: valor => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(valor),
+            mensaje: 'El correo no es válido.'
+        },
+        cod_area: {
+            input: document.getElementById('cod_area'),
+            validar: valor => /^[0-9\s\-]+$/.test(valor),
+            mensaje: 'Solo se permiten números.'
+        },
+        tel: {
+            input: document.getElementById('tel'),
+            validar: valor => /^[0-9\s\-]+$/.test(valor),
+            mensaje: 'El número contiene caracteres inválidos.'
+        },
+    };
+
+    // AGREGA LISTENER A INPUTS
+    for (let campo in campos) {
+        const { input, validar, mensaje } = campos[campo];
+        const evento = input.tagName === 'SELECT' ? 'change' : 'input';
+
+        input.addEventListener(evento, () => {
+            if (validar(input.value)) {
+                limpiarError(input);
+            } else {
+                mostrarError(input, mensaje);
+            }
+        });
+    }
+
+    // MUESTRA EL ERROR
+    function mostrarError(input, mensaje) {
+        input.classList.add('error');
+        let error = input.parentNode.querySelector('.mensaje-error');
+        if (error) {
+            error.textContent = mensaje;
+        }
+    }
+
+    // BORRA EL ERROR
+    function limpiarError(input) {
+        input.classList.remove('error');
+        const error = input.parentNode.querySelector('.mensaje-error');
+        if (error) {
+            error.textContent = '';
+        }
+    }
+});
